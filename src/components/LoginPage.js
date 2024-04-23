@@ -12,10 +12,8 @@ function LoginPage() {
   const handleLoginSubmit = (event) => {
     event.preventDefault();
 
-    // Retrieve user data from local storage
     const savedUserData = JSON.parse(localStorage.getItem("user"));
 
-    // Validate login data
     if (
       !savedUserData ||
       savedUserData.email !== loginData.email ||

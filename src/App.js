@@ -6,6 +6,7 @@ import CausesPage from "./components/CausesPage";
 import DonationStepsPage from "./components/DonationStepsPage";
 import Navbar from "./Navbar";
 import LoginPage from "./components/LoginPage";
+import VolunteerPage from "./components/VolunteerPage";
 
 function App() {
   console.log(HomePage);
@@ -19,6 +20,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/volunteer-signup" element={<SignupPage />} />
+            <Route path="/volunteer" element={<VolunteerPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/causes" element={<CausesPage />} />
             <Route path="/donation-steps" element={<DonationStepsPage />} />

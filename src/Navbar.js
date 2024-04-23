@@ -12,14 +12,14 @@ function Navbar() {
               aria-label="Global"
             >
               <div className="flex lg:flex-1">
-                <a href="#" className="-m-1.5 p-1.5">
+                <Link to="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
               <div className="flex lg:hidden">
                 <button
@@ -45,65 +45,56 @@ function Navbar() {
               </div>
               <div className="hidden lg:flex lg:gap-x-12">
                 <Link
-                  to="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Home
-                </Link>
-                <Link
                   to="/about"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="text-sm font-semibold leading-6 text-gray-900"
                 >
-                  About
-                </Link>
-                <Link
-                  to="/volunteer-signup"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Volunteer signup
+                  About Us
                 </Link>
                 <Link
                   to="/causes"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="text-sm font-semibold leading-6 text-gray-900"
                 >
                   Causes
                 </Link>
                 <Link
                   to="/donation-steps"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="text-sm font-semibold leading-6 text-gray-900"
                 >
-                  Donation steps
+                  How to Donate
+                </Link>
+                <Link
+                  to="/volunteer-signup"
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                >
+                  Volunteer
                 </Link>
               </div>
-              <div className="py-6">
-                <Link
-                  to="/login"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </Link>
-                <Link
-                  to="/volunter-signup"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Sign up
-                </Link>
+              <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                {pathname !== "/" ||
+                  pathname !== "/donation-steps" ||
+                  pathname !== "/causes" ||
+                  (pathname !== "/about" && (
+                    <Link
+                      to="/login"
+                      className="mt-6 inline-block bg-white text-indigo-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-800 hover:text-white"
+                    >
+                      Log in
+                    </Link>
+                  ))}
               </div>
             </nav>
-            {/* Mobile menu, show/hide based on menu open state. */}
             <div className="lg:hidden" role="dialog" aria-modal="true">
-              {/* Background backdrop, show/hide based on slide-over state. */}
               <div className="fixed inset-0 z-50"></div>
               <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div className="flex items-center justify-between">
-                  <a href="#" className="-m-1.5 p-1.5">
+                  <Link to="/" className="-m-1.5 p-1.5">
                     <span className="sr-only">Your Company</span>
                     <img
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                       alt=""
                     />
-                  </a>
+                  </Link>
                   <button
                     type="button"
                     className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -129,22 +120,10 @@ function Navbar() {
                   <div className="-my-6 divide-y divide-gray-500/10">
                     <div className="space-y-2 py-6">
                       <Link
-                        to="/"
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        Home
-                      </Link>
-                      <Link
                         to="/about"
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >
-                        About
-                      </Link>
-                      <Link
-                        to="/volunteer-signup"
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        Volunteer signup
+                        About Us
                       </Link>
                       <Link
                         to="/causes"
@@ -156,7 +135,13 @@ function Navbar() {
                         to="/donation-steps"
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >
-                        Donation steps
+                        How to Donate
+                      </Link>
+                      <Link
+                        to="/volunteer-signup"
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      >
+                        Volunteer
                       </Link>
                     </div>
                     <div className="py-6">
@@ -165,12 +150,6 @@ function Navbar() {
                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                       >
                         Log in
-                      </Link>
-                      <Link
-                        to="/volunter-signup"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >
-                        Sign up
                       </Link>
                     </div>
                   </div>

@@ -14,13 +14,11 @@ function SignupPage() {
 
   const handleSignupSubmit = (event) => {
     event.preventDefault();
-    // Validate signup data
     if (signupData.password !== signupData.confirmPassword) {
       alert("Passwords do not match");
       return;
     }
     console.log(signupData);
-    // Save signup data to local storage
     localStorage.setItem("user", JSON.stringify(signupData));
     navigate("/login");
   };
@@ -31,7 +29,7 @@ function SignupPage() {
   };
 
   const toggleHasAccount = () => {
-    setHasAccount(!hasAccount); // Toggle the value of hasAccount
+    setHasAccount(!hasAccount);
   };
 
   return (
